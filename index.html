@@ -1,134 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Grid Rows and gaps</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
-
   </head>
+
   <body>
     <div>
-       <h1> Sudoku-Solver</h1>
+      <h1>Sudoku-Solver</h1>
     </div>
 
-    
     <div class="inst">
-        <h3>Note:</h3>
-        <div class="fa fa-circle point"></div>  Please enter number between 0-9 .
-        <br>
-        <div class="fa fa-circle point"></div> Every Number in row only appear once.
-        <br>
-         <div class="fa fa-circle point"></div> Every Number in column only appear once.
-        <br>
-        <div class="fa fa-circle point"></div> Every Number in 3*3 matrix only appear once.
-     
+      <h3>Note:</h3>
+      <div class="fa fa-circle point"></div>
+      Please enter number between 0-9 .
+      <br />
+      <div class="fa fa-circle point"></div>
+      Every Number in row only appear once.
+      <br />
+      <div class="fa fa-circle point"></div>
+      Every Number in column only appear once.
+      <br />
+      <div class="fa fa-circle point"></div>
+      Every Number in 3*3 matrix only appear once.
+      <br/>
+      <div class="fa fa-circle point"></div>
+      PLease Don't Change Given Matrix
     </div>
 
-    <div class="grid">
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
+    <div class="grid" id="gr">
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
 
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
 
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
 
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
 
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
 
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box  box-1"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
-      <div class="box"><input type="number" min="1" max="9"></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
 
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
 
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
 
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box "><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-      <div class="box box-1"><input type="number" min="1" max="9"></div>
-
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box"><input id="inp" type="number" min="1" max="9" /></div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
+      <div class="box box-1">
+        <input id="inp" type="number" min="1" max="9" />
+      </div>
     </div>
 
     <div class="btn-cl">
-        <button class="btn">Generate New</button>
-        <button class="btn1">Clear</button>
-        <button class="btn1">Solve</button>
-        <button class="btn1">Reset</button>
-
+      <button onclick="Generate()" id="generate" class="btn">Generate Random</button>
+      <button onclick="Clear()" id="clear" class="btn1">Clear</button>
+      <button onclick="Solve()" id="solve" class="btn1">Solve</button>
+      <button onclick="Check()" id="check" class="btn1">Check</button>
     </div>
 
-
+    <script src="script.js"></script>
   </body>
+
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sudoku-solver">
+        <div id="puzzle" class="puzzle"></div>
+        <button type="button" id="solve-button" class="solve-button">Solve</button>
+        <button type="button" id="clear-button" class="clear-button">Clear</button>
+    </div>    
+
+    <script type="module" src="script.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+ -->

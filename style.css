@@ -1,9 +1,10 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border-spacing: 0;
 }
+
 
 .sudoku-solver {
   margin: auto;
@@ -14,28 +15,22 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-auto-rows: 2fr;
-  /* grid-template-columns: 1fr ;
-    grid-template-rows: 1fr ; */
   grid-template-columns: repeat(9, 2fr);
   grid-template-rows: repeat(9, 2fr);
   grid-gap: 5px;
   margin: auto;
-  /* width: 80px; */
   margin-left: 600px;
   margin-right: 500px;
   background-color: rgb(255, 181, 255);
+
 }
 .box {
   background-color: rgb(255, 255, 255);
   border: 2px solid black;
-  /* margin: 3px; */
-
   height: 70px;
-  /* width: 70px; */
   width: 70px;
   text-align: center;
   margin: auto;
-  /* padding: 50px; */
   box-shadow: 2px 2px 2px 2px rgb(255, 0, 251);
 }
 
@@ -50,27 +45,26 @@ h1 {
   font-size: 70px;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: overline underline rgb(204, 0, 255);
+ 
 }
 
 input {
   height: 70px;
-  /* width: 70px; */
   width: 70px;
   text-align: center;
   font-size: 50px;
+  font-family:cursive;
+  font-weight: bold;
 }
 
 .grid .box-1 input {
-  background-color: rgb(255, 215, 252);
+  background-color: rgb(255, 194, 251);
 }
 
 .inst {
-  /* text-align: center; */
-  /* margin-bottom: 20px; */
   font-size: 22px;
   width: 30%;
   margin-left: 20px;
-  /* height: 25px; */
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -87,14 +81,14 @@ input {
 
 .btn-cl {
   position: fixed;
-  top: 100px; /* Adjust the top position as desired */
-  right: 20px; /* Adjust the right position as desired */
-  /* width: 300px; 
-    height: 200px;  */
-  /* background-color: #f1f1f1; */
-  /* border: 1px solid #ccc; */
-  /* padding: 10px;  */
+  top: 100px; 
+  right: 20px; 
+ 
   margin-right: 50px;
+  border: 5px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 5px rgb(225, 0, 255);
  
 }
 
@@ -143,8 +137,48 @@ input {
 
 
 .btn:hover,.btn1:hover{
-  box-shadow: inset 2px 2px 5px 5px rgb(254, 254, 254);
-  border: 3px solid rgb(231, 0, 197);
+  box-shadow: inset 2px 2px 5px 5px rgb(255, 255, 255);
+  border: 2px solid rgb(231, 0, 197);
   text-decoration:double underline rgb(211, 28, 202);
   
 }
+
+
+
+
+
+/* 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-spacing: 0;
+}
+
+.sudoku-solver {
+  margin: auto;
+  width: 50%;
+}
+
+.puzzle {
+  width: 540px;
+  height: 540px;
+}
+
+.puzzle input {
+  text-align: center;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  border: 1px #808080 solid;
+}
+
+.odd-section {
+  background: #d3d3d3;
+}
+
+ */
+
+
+
