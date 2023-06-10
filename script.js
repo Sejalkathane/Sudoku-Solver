@@ -122,22 +122,24 @@ const sudokuMatrix10 = [
 ];
 
 
+let matrix=[];
 
-const matrix=[];
+const matrix2D = [];
 
-// function Generate(){
+
+function Generate(){
   const mt = [sudokuMatrix1, sudokuMatrix2, sudokuMatrix3, sudokuMatrix4,sudokuMatrix5,sudokuMatrix6,sudokuMatrix7,sudokuMatrix8,sudokuMatrix9,sudokuMatrix10];
 
  const randomIndex = Math.floor(Math.random() * mt.length);
  const randomMatrix = mt[randomIndex];
-  for(let i=0;i<=80;i++)
+ for(let i=0;i<=80;i++)
    {
     let inputs=document.querySelectorAll('input'); 
     inputs[i].value=randomMatrix[i];
     if(randomMatrix[i]>0){
     inputs[i].style.color = 'red'
     inputs[i].style.fontWeight = 'bold'
-    }
+  }
    }
   
 
@@ -147,7 +149,23 @@ const matrix=[];
     matrix[i]=inputs.value;
   }
   console.log(matrix);
-// }
+
+
+  const convertTo2DMatrix = (array, rows, cols) => {
+    let rowIndex = 0;
+  
+    for (let i = 0; i < array.length; i += cols) {
+      const row = array.slice(i, i + cols);
+      matrix2D[rowIndex] = row;
+      rowIndex++;
+    }
+  
+    console.log(matrix2D);
+    // console.log(matrix2D[3][4]);
+  };
+  convertTo2DMatrix(matrix, 9, 9);
+  
+}
 
 
 
@@ -161,35 +179,8 @@ function Clear()
    let inputs=document.querySelectorAll('input'); 
    inputs[i].value='';
   }
+  console.clear();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-const matrix2D = [];
-const convertTo2DMatrix = (array, rows, cols) => {
-  let rowIndex = 0;
-
-  for (let i = 0; i < array.length; i += cols) {
-    const row = array.slice(i, i + cols);
-    matrix2D[rowIndex] = row;
-    rowIndex++;
-  }
-
-  console.log(matrix2D);
-  console.log(matrix2D[3][4]);
-};
-
-convertTo2DMatrix(matrix, 9, 9);
-
 
 
 
