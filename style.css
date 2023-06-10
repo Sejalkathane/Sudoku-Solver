@@ -55,6 +55,7 @@ input {
   font-size: 50px;
   font-family:cursive;
   font-weight: bold;
+  /* color: rgb(106, 106, 106); */
 }
 
 .grid .box-1 input {
