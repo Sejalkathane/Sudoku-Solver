@@ -125,11 +125,11 @@ const sudokuMatrix10 = [
 
 const matrix=[];
 
-function Generate(){
-  const matrix = [sudokuMatrix1, sudokuMatrix2, sudokuMatrix3, sudokuMatrix4,sudokuMatrix5,sudokuMatrix6,sudokuMatrix7,sudokuMatrix8,sudokuMatrix9,sudokuMatrix10];
+// function Generate(){
+  const mt = [sudokuMatrix1, sudokuMatrix2, sudokuMatrix3, sudokuMatrix4,sudokuMatrix5,sudokuMatrix6,sudokuMatrix7,sudokuMatrix8,sudokuMatrix9,sudokuMatrix10];
 
- const randomIndex = Math.floor(Math.random() * matrix.length);
- const randomMatrix = matrix[randomIndex];
+ const randomIndex = Math.floor(Math.random() * mt.length);
+ const randomMatrix = mt[randomIndex];
   for(let i=0;i<=80;i++)
    {
     let inputs=document.querySelectorAll('input'); 
@@ -139,7 +139,7 @@ function Generate(){
     inputs[i].style.fontWeight = 'bold'
     }
    }
-
+  
 
 
    for(let i=0;i<=80;i++){
@@ -147,8 +147,10 @@ function Generate(){
     matrix[i]=inputs.value;
   }
   console.log(matrix);
+// }
 
-}
+
+
 
 
 
@@ -162,347 +164,135 @@ function Clear()
 }
 
 
-// function Check()
-// {
 
-// }
+
+
+
+
+
+
+
+
+
+const matrix2D = [];
+const convertTo2DMatrix = (array, rows, cols) => {
+  let rowIndex = 0;
+
+  for (let i = 0; i < array.length; i += cols) {
+    const row = array.slice(i, i + cols);
+    matrix2D[rowIndex] = row;
+    rowIndex++;
+  }
+
+  console.log(matrix2D);
+  console.log(matrix2D[3][4]);
+};
+
+convertTo2DMatrix(matrix, 9, 9);
+
+
+
+
+
+
+
+
+
+//SOLVE FUNCTION
+
+const solveSudoku = (matrix2D) => 
+{
+  const isValid = (matrix2D, row, col, num) => {
+    // Check if the number already exists in the row
+    for (let i = 0; i < 9; i++) {
+      if (matrix2D[row][i] == num) {
+        return false;
+      }
+    }
+
+    // Check if the number already exists in the column
+    for (let i = 0; i < 9; i++) {
+      if (matrix2D[i][col] == num) {
+        return false;
+      }
+    }
+
+    // Check if the number already exists in the 3x3 box
+    const startRow = Math.floor(row / 3) * 3;
+    const startCol = Math.floor(col / 3) * 3;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (matrix2D[startRow + i][startCol + j] == num) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  };
+
+  const solve = () => {
+    for (let row = 0; row < 9; row++) {
+      for (let col = 0; col < 9; col++) {
+        if (matrix2D[row][col] == '') {
+          for (let num = 1; num <= 9; num++) {
+            if (isValid(matrix2D, row, col, num)) {
+              matrix2D[row][col] = num;
+
+              if (solve()) {
+                return true;
+              }
+
+              // Reset the cell if the solution is not valid
+              matrix2D[row][col] = '';
+            }
+          }
+
+          // If no valid number found, backtrack
+          return false;
+        }
+      }
+    }
+
+    // All cells filled, solution found
+    return true;
+  };
+
+  if (solve()) {
+    return matrix2D;
+  } else {
+    return null; // No solution exists
+  }
+};
+
+// Solve the Sudoku matrix
+
+function Solve(){
+console.log( solveSudoku(matrix2D));
+let i=0;
+for(let j=0;j<9;j++)
+{
+  for(let k=0;k<9;k++)
+  {
+     
+    let inputs=document.querySelectorAll('input'); 
+    inputs[i].value=matrix2D[j][k];
+    i++;
+  }
+}
+
+}
+
+
+
 // function Check()
 // {
-//   for(let i=0;i<=80;i++)
+//   for(let i=0;i<9;i++)
 //   {
-//     console.log(matrix[i]);
-//   }
-// }
-
-
-
-// const convertTo2DMatrix = (array, rows, cols) => {
-//   const matrix2D = [];
-//   let rowIndex = 0;
-
-//   for (let i = 0; i < array.length; i += cols) {
-//     const row = array.slice(i, i + cols);
-//     matrix2D[rowIndex] = row;
-//     rowIndex++;
-//   }
-
-//   return matrix2D;
-// };
-
-// Convert matrix to 2D format
-// const matrix = convertTo2DMatrix(matrix, 9, 9);
-
-
-
-
-
-
-
-
-
-
-// function convertToMatrix(matrix) {
-//   const matrix = [];
-
-//   for (let i = 0; i < matrix.length; i += 9) {
-//     const row = matrix.slice(i, i + 9);
-//     matrix.push(row);
-//   }
-
-//   return matrix;
-// }
-// const matrix= convertToMatrix(matrix);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function solve(matrix) 
-// {
-  
-//   const isValid = (matrix, row, col, num) => {
-//     for (let i = 0; i < 9; i++) {
-//       const rowCheck = matrix[row][i] === num;
-//       const colCheck = matrix[i][col] === num;
-//       const boxCheck =
-//         matrix[Math.floor(row / 3) * 3 + Math.floor(i / 3)][Math.floor(col / 3) * 3 + (i % 3)] === num;
-//       if (rowCheck || colCheck || boxCheck) {
-//         return false;
-//       }
-//     }
-//     return true;
-//   };
-
-//   const solveSudoku = () => {
-//     for (let row = 0; row < 9; row++) {
-//       for (let col = 0; col < 9; col++) {
-//         if (matrix[row][col] === '') {
-//           for (let num = 1; num <= 9; num++) {
-//             if (isValid(matrix, row, col, num)) {
-//               matrix[row][col] = num;
-//               if (solveSudoku()) {
-//                 return true;
-//               } else {
-//                 matrix[row][col] = ''; // Undo the assignment if it leads to an incorrect solution
-//               }
-//             }
-//           }
-//           return false; // No valid number found for this cell, backtrack
-//         }
-//       }
-//     }
-//     return true; // All cells filled, the Sudoku is solved
-//   };
-
-//   solveSudoku();
-//   return matrix;
-// }
-
-
-
-// function Solve()
-// {
-//     console.log(solve(matrix));
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let matrix = [];
-// function convertToMatrix(array) {
-
-//   for (let i = 0; i < array.length; i += 9) {
-//     const row = array.slice(i, i + 9);
-//     matrix.push(row);
-//   }
-
-//   return matrix;
-// }
-
-// matrix = convertToMatrix(matrix);
-
-// console.log(matrix);
-
-
-
-
-
-
-
-
-// function solve() {
-//   const size = 9;
-//   const emptySpot = findEmptySpot();
-
-//   const row = emptySpot[0];
-//   const col = emptySpot[1];
-
-//   for (let num = 1; num <= size; num++) {
-//     if (isValid(matrix, row, col, num)) {
-//       matrix[row][col] = num;
-
-//       const solvedMatrix = solve(matrix);
-//       if (solvedMatrix) {
-//         return solvedMatrix;
-//       }
-
-//       matrix[row][col] = ''; 
-//       // Backtrack and reset the value
+//     for(let j=0;j<9;j++)
+//     {
+//        if(inputs.value;)
 //     }
 //   }
-
-//   return null; // No solution found
 // }
-
-// // Helper function to find the next empty spot in the matrix
-// function findEmptySpot() {
-//   const size = 9;
-
-//   for (let row = 0; row < size; row++) {
-//     for (let col = 0; col < size; col++) {
-//       if (matrix[row][col] === '') {
-//         return [row, col];
-//       }
-//     }
-//   }
-
-//   return null; // If no empty spot is found
-// }
-
-// // Helper function to check if a number is valid in a specific spot
-// function isValid( row, col, num) {
-//   const size = 9;
-
-//   // Check if the number already exists in the row or column
-//   for (let i = 0; i < size; i++) {
-//     if (matrix[row][i] === num || matrix[i][col] === num) {
-//       return false;
-//     }
-//   }
-
-//   // Check if the number already exists in the 3x3 box
-//   const boxStartRow = Math.floor(row / 3) * 3;
-//   const boxStartCol = Math.floor(col / 3) * 3;
-
-//   for (let i = 0; i < 3; i++) {
-//     for (let j = 0; j < 3; j++) {
-//       if (matrix[boxStartRow + i][boxStartCol + j] === num) {
-//         return false;
-//       }
-//     }
-//   }
-
-//   return true; // Number is valid in the current spot
-// }
-
-
-
-
-
-// function Solve(){
-//   solve();
-//   for(let i=0;i<=80;i++)
-//    {
-//     let inputs=document.querySelectorAll('input'); 
-//     inputs[i].value=matrix[i];
-//     console.log(matrix[i]);
-//    }
-// }
-
-
-
-
-
-
-
-
-
-// const solveSudoku = (matrix) => 
-// {
-//   const isValid = (matrix, row, col, num) => {
-//     // Check if the number already exists in the row
-//     for (let i = 0; i < 9; i++) {
-//       if (matrix[row][i] === num) {
-//         return false;
-//       }
-//     }
-
-//     // Check if the number already exists in the column
-//     for (let i = 0; i < 9; i++) {
-//       if (matrix[i][col] === num) {
-//         return false;
-//       }
-//     }
-
-//     // Check if the number already exists in the 3x3 box
-//     const startRow = Math.floor(row / 3) * 3;
-//     const startCol = Math.floor(col / 3) * 3;
-//     for (let i = 0; i < 3; i++) {
-//       for (let j = 0; j < 3; j++) {
-//         if (matrix[startRow + i][startCol + j] === num) {
-//           return false;
-//         }
-//       }
-//     }
-
-//     return true;
-//   };
-
-//   const solve = () => {
-//     for (let row = 0; row < 9; row++) {
-//       for (let col = 0; col < 9; col++) {
-//         if (matrix[row][col] === '') {
-//           for (let num = 1; num <= 9; num++) {
-//             if (isValid(matrix, row, col, num)) {
-//               matrix[row][col] = num;
-
-//               if (solve()) {
-//                 return true;
-//               }
-
-//               // Reset the cell if the solution is not valid
-//               matrix[row][col] = '';
-//             }
-//           }
-
-//           // If no valid number found, backtrack
-//           return false;
-//         }
-//       }
-//     }
-
-//     // All cells filled, solution found
-//     return true;
-//   };
-
-//   if (solve()) {
-//     return matrix;
-//   } else {
-//     return null; // No solution exists
-//   }
-// };
-
-// // Solve the Sudoku matrix
-
-// function Solve(){
-// const solvedMatrix = solveSudoku(matrix);
-// console.log(solvedMatrix);
-// // Print the solution
-//   console.log('Solution:');
-//   // for (let row = 0; row < 9; row++) {
-//   //   console.log(solvedMatrix[row].join(' '));
-//   // }
-// }
-
-
-
-
-
-
-// function convertToMatrix(array) {
-//   const mt = [];
-
-//   for (let i = 0; i < array.length; i += 9) {
-//     const row = array.slice(i, i + 9);
-//     mt.push(row);
-//   }
-
-//   return mt;
-// }
-
-// // function Check()
-// // {
-// convertToMatrix(matrix);
-// // console.log(m);
-// // }
-
-// console.log(matrix[3][3]);
-
-
-console.log(matrix[6]);
-
-
 
