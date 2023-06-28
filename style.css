@@ -19,22 +19,23 @@ body
 
 .grid {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-auto-rows: 2fr;
-  grid-template-columns: repeat(9, 2fr);
-  grid-template-rows: repeat(9, 2fr);
+  /* grid-template-rows: 0.5fr 0.5fr 0.5fr; */
+  /* grid-auto-rows: 1fr; */
+  grid-template-columns: repeat(9, 0.5fr);
+  grid-template-rows: repeat(9, 0.5fr);
   grid-gap: 5px;
   margin: auto;
-  margin-left: 600px;
-  margin-right: 500px;
+  /* margin-left: 500px; */
+  margin-right: 600px;
+  /* margin-bottom: 200px; */
   background-color: rgb(255, 181, 255);
 
 }
 .box {
   background-color: rgb(255, 255, 255);
   border: 2px solid black;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   text-align: center;
   margin: auto;
   box-shadow: 2px 2px 2px 2px rgb(255, 0, 251);
@@ -46,22 +47,22 @@ body
 
 h1 {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  font-size: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: overline underline rgb(204, 0, 255);
  
 }
 
 input {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   text-align: center;
-  font-size: 50px;
-  font-family:cursive;
+  font-size: 44px;
+  /* font-family:cursive; */
   font-weight: bold;
-  /* color: rgb(106, 106, 106); */
+  color: rgb(9, 17, 101);
 }
 
 .grid .box-1 input {
@@ -69,7 +70,7 @@ input {
 }
 
 .inst {
-  font-size: 22px;
+  font-size: 19px;
   width: 30%;
   margin-left: 20px;
   position: -webkit-sticky;
@@ -87,11 +88,13 @@ input {
 }
 
 .btn-cl {
-  position: fixed;
-  top: 100px; 
+  position: absolute;
+ /* flex-direction: row; */
+ float: left;
+  top: 80px; 
   right: 20px; 
  
-  margin-right: 50px;
+  margin-right: px;
   border: 5px solid black;
   padding: 20px;
   border-radius: 20px;
@@ -100,12 +103,12 @@ input {
 }
 
 .btn {
-  width: 180px;
-  height: 70px;
+  width: 160px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
-  font-size: 26px;
+  font-size: 20px;
   text-decoration: underline rgb(188, 188, 188);
   border-radius: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -122,12 +125,12 @@ input {
 
 
 .btn1 {
-  width: 180px;
-  height: 70px;
+  width: 160px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: underline rgb(255, 0, 238);
   border-radius: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
